@@ -10,6 +10,7 @@
     -   [ArrayUtil](#arrayutil)
     -   [EnumUtil](#enumutil)
     -   [Контейнеры](#контейнеры)
+    -   [PatternUtil](#patternutil)
 
 ## Обзор
 
@@ -83,4 +84,67 @@ String name = triplet.getFirst(); // "Name"
 int age = triplet.getSecond(); // 30
 boolean status = triplet.getThree(); // true
 boolean empty = triplet.isEmpty(); // false
+```
+
+### PatternUtil
+
+Утилитный класс для работы с регулярными выражениями и шаблонами.
+
+```java
+// Проверка строки на соответствие URL
+boolean valid = PatternUtil.isUrl("https://example.com"); // true
+
+// Email
+boolean email = PatternUtil.isEmail("test@mail.com"); // true
+
+// Телефон
+boolean phone = PatternUtil.isPhone("+79991234567"); // true
+
+// Username
+boolean username = PatternUtil.isUsername("user_name"); // true
+
+// IPv4
+boolean ipv4 = PatternUtil.isIPv4("192.168.1.1"); // true
+
+// Hex-цвет
+boolean hex = PatternUtil.isHexColor("#FFAABB"); // true
+
+// UUID
+boolean uuid = PatternUtil.isUUID("123e4567-e89b-12d3-a456-426614174000"); // true
+
+// Дата (yyyy-MM-dd)
+boolean date = PatternUtil.isDate("2024-05-01"); // true
+
+// Время (HH:mm:ss)
+boolean time = PatternUtil.isTime("12:34:56"); // true
+
+// Число
+boolean number = PatternUtil.isNumber("-123.45"); // true
+
+// MAC-адрес
+boolean mac = PatternUtil.isMac("00:1A:2B:3C:4D:5E"); // true
+
+// Base64
+boolean base64 = PatternUtil.isBase64("SGVsbG8gd29ybGQ="); // true
+
+// Пустая или пробельная строка
+boolean blank = PatternUtil.isBlank("   "); // true
+
+// Только русские буквы
+boolean onlyRussian = PatternUtil.isRussian("Привет"); // true
+
+// Только английские буквы
+boolean onlyEnglish = PatternUtil.isEnglish("Hello"); // true
+
+// Только русские и английские буквы
+boolean ruEn = PatternUtil.isRussianEnglish("HelloПривет"); // true
+
+// Только русские буквы и цифры
+boolean ruDigits = PatternUtil.isRussianWithDigits("Тест123"); // true
+
+// Только английские буквы и цифры
+boolean enDigits = PatternUtil.isEnglishWithDigits("Test123"); // true
+
+// Только русские, английские буквы и цифры
+boolean ruEnDigits = PatternUtil.isRussianEnglishWithDigits("TestТест123"); // true
 ```
