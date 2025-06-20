@@ -8,7 +8,7 @@ import lombok.experimental.UtilityClass;
  * Утилитный класс для работы с регулярными выражениями и шаблонами.
  */
 @UtilityClass
-public final class PatternUtil {
+public class PatternUtil {
     private final Pattern URL_PATTERN = Pattern.compile(
         "^(https?://)?([\\w\\-]+\\.)+[\\w\\-]+(:\\d+)?(/\\S*)?$",
         Pattern.CASE_INSENSITIVE
