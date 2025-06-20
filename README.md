@@ -14,6 +14,8 @@
     -   [EnumUtil](#enumutil)
     -   [Контейнеры](#контейнеры)
     -   [PatternUtil](#patternutil)
+    -   [JsonUtil](#jsonutil)
+    -   [FileUtil](#fileutil)
 
 ## Обзор
 
@@ -23,6 +25,9 @@
 -   Работа с массивами и списками
 -   Работа с enum
 -   Контейнеры для хранения пар и троек значений
+-   Работа с регулярными выражениями
+-   Работа с JSON
+-   Работа с файлами и директориями
 
 ## Функции
 
@@ -42,6 +47,9 @@ String bar = StringUtil.genBar(10, 0.7f, '#', "░", "█"); // "█████
 
 // Замена подстроки без учета регистра
 String replaced = StringUtil.replaceAll("hello", "bye", "Hello World!", true); // "bye World!"
+
+// Удаление подстроки по индексам
+String removed = StringUtil.removeSubstring("abcdef", 2, 4); // "abef"
 ```
 
 ### ArrayUtil
@@ -150,4 +158,40 @@ boolean enDigits = PatternUtil.isEnglishWithDigits("Test123"); // true
 
 // Только русские, английские буквы и цифры
 boolean ruEnDigits = PatternUtil.isRussianEnglishWithDigits("TestТест123"); // true
+```
+
+### JsonUtil
+
+Утилитный класс для работы с JSON (на основе Gson).
+
+```java
+// Проверка валидности JSON
+boolean valid = JsonUtil.isJsonValid("{\"a\":1}"); // true
+
+// Преобразование объекта в JSON
+String json = JsonUtil.toJson(new Pair<>("a", 1)); // "{\"first\":\"a\",\"second\":1}"
+
+// Преобразование JSON в объект
+Pair<String, Integer> pair = JsonUtil.fromJson("{\"first\":\"a\",\"second\":1}", Pair.class);
+```
+
+### FileUtil
+
+Утилитный класс для работы с файлами и директориями.
+
+```java
+// Копирование директории
+FileUtil.copyDirectory("srcDir", "destDir");
+
+// Копирование файла
+FileUtil.copy(new File("a.txt"), new File("b.txt"));
+
+// Создание файла с родительскими директориями
+FileUtil.createFile(new File("dir/file.txt"));
+
+// Рекурсивное удаление файла или директории
+FileUtil.delete(new File("dirOrFile"));
+
+// Распаковка zip-архива
+FileUtil.unzip(new File("archive.zip"), new File("outputDir"));
 ```
