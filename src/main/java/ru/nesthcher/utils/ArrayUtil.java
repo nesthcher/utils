@@ -18,12 +18,12 @@ public class ArrayUtil {
      * @param clazz Класс элементов списка
      * @return Список сконвертированных элементов или null в случае неудачи
      */
-    public <T> List<T> convertObjectToList(
+    public <T> ArrayList<T> convertObjectToList(
             @NotNull final Object object,
             @NotNull  final Class<T> clazz
     ) {
         if (!(object instanceof ArrayList<?>)) return null;
-        final List<T> list = new ArrayList<>();
+        final ArrayList<T> list = new ArrayList<>();
         for (final Object o : (List<?>) object) list.add(clazz.cast(o));
         return list;
     }

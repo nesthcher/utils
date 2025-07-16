@@ -4,7 +4,7 @@
   <groupId>ru.nesthcher</groupId>
   <artifactId>utils</artifactId>
   <name>${project.groupId}:${project.artifactId}</name>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <description>Библиотека утилитных классов для Java-проектов</description>
   <url>https://github.com/nesthcher/${project.artifactId}</url>
   <issueManagement>
@@ -79,7 +79,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.6.0</version>
+        <version>${plugin.maven.shade.ver}</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -107,10 +107,11 @@
     </repository>
   </distributionManagement>
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <plugin.maven.javadoc.ver>3.11.2</plugin.maven.javadoc.ver>
-    <plugin.maven.source.ver>3.3.1</plugin.maven.source.ver>
     <java.version>24</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <plugin.maven.shade.ver>3.6.0</plugin.maven.shade.ver>
+    <plugin.maven.source.ver>3.3.1</plugin.maven.source.ver>
     <plugin.maven.compiler.ver>3.3</plugin.maven.compiler.ver>
   </properties>
 </project>
