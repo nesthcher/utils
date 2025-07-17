@@ -16,7 +16,7 @@ import static com.google.gson.stream.JsonToken.END_DOCUMENT;
 
 @UtilityClass
 public class JsonUtil {
-    private final Gson gson = new Gson();
+    public final Gson GSON = new Gson();
 
     public <T> T fromJson(
             @NotNull final String json,
@@ -24,7 +24,7 @@ public class JsonUtil {
     ) {
         try {
             if(!isJsonValid(json)) return null;
-            return gson.fromJson(json, clazz);
+            return GSON.fromJson(json, clazz);
         } catch (IOException ignore) {
         }
         return null;
@@ -33,14 +33,14 @@ public class JsonUtil {
     public String toJson(
             @NotNull final Object object
     ) {
-        return gson.toJson(object);
+        return GSON.toJson(object);
     }
 
     public <T> String toJson(
             @NotNull final Object object,
             @NotNull final Class<T> clazz
     ) {
-        return gson.toJson(object, clazz);
+        return GSON.toJson(object, clazz);
     }
 
     public <T> void toJson(
@@ -48,7 +48,7 @@ public class JsonUtil {
             @NotNull final Class<T> clazz,
             @NotNull final JsonWriter jsonWriter
     ) {
-        gson.toJson(object, clazz, jsonWriter);
+        GSON.toJson(object, clazz, jsonWriter);
     }
 
     public boolean isJsonValid(

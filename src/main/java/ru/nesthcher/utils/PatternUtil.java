@@ -3,6 +3,7 @@ package ru.nesthcher.utils;
 import java.util.regex.Pattern;
 
 import lombok.experimental.UtilityClass;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Утилитный класс для работы с регулярными выражениями и шаблонами.
@@ -93,8 +94,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является URL, иначе false
      */
-    public boolean isUrl(String str) {
-        if (str == null) return false;
+    public boolean isUrl(
+            final String str
+    ) {
         return URL_PATTERN.matcher(str).matches();
     }
 
@@ -104,7 +106,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является email, иначе false
      */
-    public boolean isEmail(String str) {
+    public boolean isEmail(
+            final String str
+    ) {
         if (str == null) return false;
         return EMAIL_PATTERN.matcher(str).matches();
     }
@@ -115,7 +119,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является телефоном, иначе false
      */
-    public boolean isPhone(String str) {
+    public boolean isPhone(
+            final String str
+    ) {
         if (str == null) return false;
         return PHONE_PATTERN.matcher(str).matches();
     }
@@ -126,7 +132,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является username, иначе false
      */
-    public boolean isUsername(String str) {
+    public boolean isUsername(
+            final String str
+    ) {
         if (str == null) return false;
         return USERNAME_PATTERN.matcher(str).matches();
     }
@@ -137,7 +145,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является IPv4-адресом, иначе false
      */
-    public boolean isIPv4(String str) {
+    public boolean isIPv4(
+            final String str
+    ) {
         if (str == null) return false;
         return IPV4_PATTERN.matcher(str).matches();
     }
@@ -148,7 +158,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является hex-цветом, иначе false
      */
-    public boolean isHexColor(String str) {
+    public boolean isHexColor(
+            final String str
+    ) {
         if (str == null) return false;
         return HEX_COLOR_PATTERN.matcher(str).matches();
     }
@@ -159,7 +171,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является UUID, иначе false
      */
-    public boolean isUUID(String str) {
+    public boolean isUUID(
+            final String str
+    ) {
         if (str == null) return false;
         return UUID_PATTERN.matcher(str).matches();
     }
@@ -170,7 +184,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является датой, иначе false
      */
-    public boolean isDate(String str) {
+    public boolean isDate(
+            final String str
+    ) {
         if (str == null) return false;
         return DATE_PATTERN.matcher(str).matches();
     }
@@ -181,7 +197,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является временем, иначе false
      */
-    public boolean isTime(String str) {
+    public boolean isTime(
+            final String str
+    ) {
         if (str == null) return false;
         return TIME_PATTERN.matcher(str).matches();
     }
@@ -192,7 +210,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является числом, иначе false
      */
-    public boolean isNumber(String str) {
+    public boolean isNumber(
+            final String str
+    ) {
         if (str == null) return false;
         return NUMBER_PATTERN.matcher(str).matches();
     }
@@ -203,7 +223,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является MAC-адресом, иначе false
      */
-    public boolean isMac(String str) {
+    public boolean isMac(
+            final String str
+    ) {
         if (str == null) return false;
         return MAC_PATTERN.matcher(str).matches();
     }
@@ -214,7 +236,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка является Base64, иначе false
      */
-    public boolean isBase64(String str) {
+    public boolean isBase64(
+            final String str
+    ) {
         if (str == null) return false;
         return BASE64_PATTERN.matcher(str).matches();
     }
@@ -225,7 +249,9 @@ public class PatternUtil {
      * @param str строка для проверки
      * @return true, если строка пустая или пробельная, иначе false
      */
-    public boolean isBlank(String str) {
+    public boolean isBlank(
+            final String str
+    ) {
         if (str == null) return true;
         return BLANK_PATTERN.matcher(str).matches();
     }
@@ -233,7 +259,9 @@ public class PatternUtil {
     /**
      * Проверяет, содержит ли строка только русские буквы.
      */
-    public boolean isRussian(String str) {
+    public boolean isRussian(
+            final String str
+    ) {
         if (str == null) return false;
         return RUSSIAN_PATTERN.matcher(str).matches();
     }
@@ -241,7 +269,9 @@ public class PatternUtil {
     /**
      * Проверяет, содержит ли строка только английские буквы.
      */
-    public boolean isEnglish(String str) {
+    public boolean isEnglish(
+            final String str
+    ) {
         if (str == null) return false;
         return ENGLISH_PATTERN.matcher(str).matches();
     }
@@ -249,7 +279,9 @@ public class PatternUtil {
     /**
      * Проверяет, содержит ли строка только русские и английские буквы.
      */
-    public boolean isRussianEnglish(String str) {
+    public boolean isRussianEnglish(
+            final String str
+    ) {
         if (str == null) return false;
         return RUSSIAN_ENGLISH_PATTERN.matcher(str).matches();
     }
@@ -257,7 +289,9 @@ public class PatternUtil {
     /**
      * Проверяет, содержит ли строка только русские буквы и цифры.
      */
-    public boolean isRussianWithDigits(String str) {
+    public boolean isRussianWithDigits(
+            final String str
+    ) {
         if (str == null) return false;
         return RUSSIAN_WITH_DIGITS_PATTERN.matcher(str).matches();
     }
@@ -265,7 +299,9 @@ public class PatternUtil {
     /**
      * Проверяет, содержит ли строка только английские буквы и цифры.
      */
-    public boolean isEnglishWithDigits(String str) {
+    public boolean isEnglishWithDigits(
+            final String str
+    ) {
         if (str == null) return false;
         return ENGLISH_WITH_DIGITS_PATTERN.matcher(str).matches();
     }
@@ -273,7 +309,9 @@ public class PatternUtil {
     /**
      * Проверяет, содержит ли строка только русские и английские буквы и цифры.
      */
-    public boolean isRussianEnglishWithDigits(String str) {
+    public boolean isRussianEnglishWithDigits(
+            final String str
+    ) {
         if (str == null) return false;
         return RUSSIAN_ENGLISH_WITH_DIGITS_PATTERN.matcher(str).matches();
     }

@@ -20,7 +20,7 @@ public class ArrayUtil {
      */
     public <T> ArrayList<T> convertObjectToList(
             @NotNull final Object object,
-            @NotNull  final Class<T> clazz
+            @NotNull final Class<T> clazz
     ) {
         if (!(object instanceof ArrayList<?>)) return null;
         final ArrayList<T> list = new ArrayList<>();

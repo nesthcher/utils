@@ -29,7 +29,10 @@ public class FileUtil {
      * @param destinationDirectory путь к целевой директории
      */
     @SneakyThrows
-    public void copyDirectory(@NotNull final String sourceDirectory, @NotNull final String destinationDirectory) {
+    public void copyDirectory(
+            @NotNull final String sourceDirectory,
+            @NotNull final String destinationDirectory
+    ) {
         Files.walk(Paths.get(sourceDirectory)).forEach(source -> {
             Path destination = Paths.get(destinationDirectory, source.toString().substring(sourceDirectory.length()));
             try {
@@ -46,7 +49,10 @@ public class FileUtil {
      * @param fileOutput целевой файл
      */
     @SneakyThrows
-    public void copy(@NotNull final File fileInput, @NotNull final File fileOutput) {
+    public void copy(
+            @NotNull final File fileInput,
+            @NotNull final File fileOutput
+    ) {
         @Cleanup InputStream is = null;
         @Cleanup OutputStream os = null;
 
@@ -65,7 +71,9 @@ public class FileUtil {
      * @param file файл для создания
      */
     @SneakyThrows
-    public void createFile(@NotNull final File file) {
+    public void createFile(
+            @NotNull final File file
+    ) {
         if (file.exists()) return;
         final File parentFile = file.getParentFile();
         if (!parentFile.exists()) parentFile.mkdirs();
@@ -76,7 +84,9 @@ public class FileUtil {
      * Удаляет файл или директорию рекурсивно.
      * @param file файл или директория для удаления
      */
-    public void delete(@NotNull final File file) {
+    public void delete(
+            @NotNull final File file
+    ) {
         if (!file.exists()) return;
         if (file.isDirectory()) {
             File[] files = file.listFiles();
@@ -94,7 +104,10 @@ public class FileUtil {
      * @param dir директория для распаковки
      */
     @SneakyThrows
-    public void unzip(@NotNull final File zip, @NotNull final File dir) {
+    public void unzip(
+            @NotNull final File zip,
+            @NotNull final File dir
+    ) {
         byte[] buffer = new byte[1024];
         if (!dir.exists()) dir.mkdir();
         @Cleanup ZipInputStream zis = new ZipInputStream(new FileInputStream(zip));
