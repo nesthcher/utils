@@ -7,7 +7,7 @@ import ru.nesthcher.utils.logger.api.LogType;
 
 @Getter
 public final class LoggerApi implements AbstractLoggerApi {
-    private final AbstractLogger logger;
+    private AbstractLogger logger;
 
     public LoggerApi(
             @NotNull AbstractLogger logger
@@ -28,5 +28,9 @@ public final class LoggerApi implements AbstractLoggerApi {
             @NotNull String message
     ) {
         log(clazz, LogType.INFORMATION, message);
+    }
+
+    public void setLogger(@NotNull AbstractLogger logger) {
+        this.logger = logger;
     }
 }

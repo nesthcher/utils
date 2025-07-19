@@ -6,7 +6,10 @@ import ru.nesthcher.utils.logger.api.LogType;
 
 public interface AbstractLoggerApi {
     void log(@NotNull Class<?> clazz, @NotNull LogType type, @NotNull String message);
+
     void log(@NotNull Class<?> clazz, @NotNull String message);
+
+    void setLogger(@NotNull AbstractLogger logger);
 
     default String logMessage(
             @NotNull Class<?> clazz,

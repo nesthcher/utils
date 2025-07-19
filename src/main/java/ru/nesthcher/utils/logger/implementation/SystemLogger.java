@@ -1,4 +1,4 @@
-package ru.nesthcher.utils.logger.implement;
+package ru.nesthcher.utils.logger.implementation;
 
 import org.jetbrains.annotations.NotNull;
 import ru.nesthcher.utils.logger.AbstractLogger;
