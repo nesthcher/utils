@@ -17,6 +17,6 @@ public interface AbstractLoggerApi {
             long timestamp,
             @NotNull String message
     ) {
-        return "\nTime: " + TimeUtil.toString(timestamp) + "\nType: " + type + "\nClassName: " + clazz.getName() + "\nMessage: " + message + "\n";
+        return "\n" + type + " Time: " + TimeUtil.toString(timestamp) + "\nClassName: " + clazz.getName() + "\nMessage: " + message + "\n";
     }
 }
