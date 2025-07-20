@@ -4,7 +4,7 @@
   <groupId>ru.nesthcher</groupId>
   <artifactId>utils</artifactId>
   <name>${project.groupId}:${project.artifactId}</name>
-  <version>1.0.6</version>
+  <version>1.0.8</version>
   <description>Библиотека утилитных классов для Java-проектов</description>
   <url>https://github.com/nesthcher/${project.artifactId}</url>
   <issueManagement>
