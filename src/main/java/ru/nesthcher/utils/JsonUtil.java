@@ -5,7 +5,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 import com.google.gson.stream.MalformedJsonException;
-import lombok.experimental.UtilityClass;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -14,9 +13,18 @@ import java.io.StringReader;
 
 import static com.google.gson.stream.JsonToken.END_DOCUMENT;
 
-@UtilityClass
 public class JsonUtil {
-    public final Gson GSON = new Gson();
+    public final Gson gson;
+
+    public JsonUtil() {
+        this.gson = new Gson();
+    }
+
+    public JsonUtil(
+            @NotNull Gson gson
+    ) {
+        this.gson = gson;
+    }
 
     public <T> T fromJson(
             @NotNull final String json,
@@ -24,7 +32,7 @@ public class JsonUtil {
     ) {
         try {
             if(!isJsonValid(json)) return null;
-            return GSON.fromJson(json, clazz);
+            return gson.fromJson(json, clazz);
         } catch (IOException ignore) {
         }
         return null;
@@ -33,14 +41,14 @@ public class JsonUtil {
     public String toJson(
             @NotNull final Object object
     ) {
-        return GSON.toJson(object);
+        return gson.toJson(object);
     }
 
     public <T> String toJson(
             @NotNull final Object object,
             @NotNull final Class<T> clazz
     ) {
-        return GSON.toJson(object, clazz);
+        return gson.toJson(object, clazz);
     }
 
     public <T> void toJson(
@@ -48,7 +56,7 @@ public class JsonUtil {
             @NotNull final Class<T> clazz,
             @NotNull final JsonWriter jsonWriter
     ) {
-        GSON.toJson(object, clazz, jsonWriter);
+        gson.toJson(object, clazz, jsonWriter);
     }
 
     public boolean isJsonValid(
