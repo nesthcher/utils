@@ -1,4 +1,4 @@
-package ru.nesthcher.utils;
+package ru.nesthcher.utils.enumeration;
 
 import org.jetbrains.annotations.NotNull;
 

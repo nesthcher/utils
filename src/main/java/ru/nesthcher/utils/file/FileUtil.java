@@ -1,4 +1,4 @@
-package ru.nesthcher.utils;
+package ru.nesthcher.utils.file;
 
 import java.io.File;
 import java.io.FileInputStream;

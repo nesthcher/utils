@@ -1,4 +1,4 @@
-package ru.nesthcher.utils;
+package ru.nesthcher.utils.converter;
 
 import lombok.experimental.UtilityClass;
 import org.jetbrains.annotations.NotNull;

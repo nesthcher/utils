@@ -1,4 +1,4 @@
-package ru.nesthcher.utils;
+package ru.nesthcher.utils.json;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;

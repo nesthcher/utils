@@ -1,4 +1,4 @@
-package ru.nesthcher.utils;
+package ru.nesthcher.utils.array;
 
 import java.util.ArrayList;
 import java.util.List;

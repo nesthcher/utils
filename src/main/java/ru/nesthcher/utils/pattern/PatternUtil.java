@@ -1,9 +1,8 @@
-package ru.nesthcher.utils;
+package ru.nesthcher.utils.pattern;
 
 import java.util.regex.Pattern;
 
 import lombok.experimental.UtilityClass;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Утилитный класс для работы с регулярными выражениями и шаблонами.
